@@ -6,12 +6,12 @@ services:
     ports:
       - "8000:8000"
     environment:
-      - POSTGRES_HOST=127.0.0.1
-      - POSTGRES_PORT=5433
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
       - POSTGRES_DB=secrets_db
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
-      - REDIS_HOST=127.0.0.1
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=secretpassword
+      - REDIS_HOST=redis
       - REDIS_PORT=6379
     depends_on:
       - postgres
