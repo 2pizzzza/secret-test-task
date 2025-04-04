@@ -1,6 +1,7 @@
 from sqlalchemy import Column, Integer, String, DateTime, func
 from app.services.database import Base
 
+
 class SecretLog(Base):
     __tablename__ = "secret_logs"
 

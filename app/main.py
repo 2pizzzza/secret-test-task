@@ -1,9 +1,6 @@
 from fastapi import FastAPI
 from app.api.v1 import secrets
-from app.config import settings
 from app.services.database import Base, engine
-
-
 
 Base.metadata.create_all(bind=engine)
 app = FastAPI(
@@ -13,6 +10,7 @@ app = FastAPI(
 )
 
 app.include_router(secrets.router, prefix="/api/v1", tags=["secrets"])
+
 
 @app.get("/")
 async def root():
